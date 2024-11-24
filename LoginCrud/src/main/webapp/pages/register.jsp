@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h2 class="text-center mb-4">Register</h2>
-                <form id="registerForm">
+                <form id="registerForm" action="RegisterServlet" method="POST">
                     <!-- Full Name -->
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name</label>
