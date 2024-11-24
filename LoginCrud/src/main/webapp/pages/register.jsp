@@ -9,39 +9,39 @@
 </head>
 <body>
     <div class="container my-5">
-        <h2 class="text-center mb-4">User Registration</h2>
-        <form id="registerForm">
-            <!-- Full Name -->
-            <div class="mb-3">
-                <label for="fullName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4">Register</h2>
+                <form id="registerForm">
+                    <!-- Full Name -->
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter a password" required>
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                </form>
             </div>
-            <!-- Username -->
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Choose a username" required>
-            </div>
-            <!-- Email -->
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <!-- Password -->
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Create a password" required>
-            </div>
-            <!-- Confirm Password -->
-            <div class="mb-3">
-                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
-            </div>
-            <!-- Error Message -->
-            <div class="text-danger mb-3" id="passwordError" style="display: none;">
-                Passwords do not match. Please try again.
-            </div>
-            <button type="submit" class="btn btn-success w-100">Register</button>
-        </form>
+        </div>
     </div>
 
     <!-- Modal for Success Message -->
@@ -63,32 +63,7 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Validación de contraseñas y simulación de registro exitoso
-        document.getElementById("registerForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Evita la acción por defecto del formulario
-
-            const password = document.getElementById("password").value;
-            const confirmPassword = document.getElementById("confirmPassword").value;
-            const errorMessage = document.getElementById("passwordError");
-
-            // Validar si las contraseñas coinciden
-            if (password !== confirmPassword) {
-                errorMessage.style.display = "block";
-                return;
-            } else {
-                errorMessage.style.display = "none";
-            }
-
-            // Mostrar modal de éxito
-            const successModal = new bootstrap.Modal(document.getElementById("successModal"));
-            successModal.show();
-
-            // Redirigir al login al hacer clic en "Continuar"
-            document.getElementById("redirectButton").addEventListener("click", function () {
-                window.location.href = "../index.jsp"; // Redirigir al archivo index.jsp
-            });
-        });
-    </script>
+    <!-- Link to external JavaScript -->
+    <script src="../scripts/register.js"></script>
 </body>
 </html>

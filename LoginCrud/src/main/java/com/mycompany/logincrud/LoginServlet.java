@@ -11,7 +11,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import models.User;
+import entities.User;
 
 /**
  *
@@ -19,14 +19,14 @@ import models.User;
  */
 public class LoginServlet extends HttpServlet {
     
-    private User user;
+    private User loginUser;
 
-    public User getUser() {
-        return user;
+    public User getLoginUser() {
+        return loginUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setLoginUser(User loginUser) {
+        this.loginUser = loginUser;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

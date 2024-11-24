@@ -10,8 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
-import models.User;
+import entities.User;
 
 /**
  *
@@ -19,14 +18,14 @@ import models.User;
  */
 public class UpdateServlet extends HttpServlet {
     
-    private List<User> users;
+    private User updateUser;
 
-    public List<User> getUsers() {
-        return users;
+    public User getUpdateUser() {
+        return updateUser;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setUpdateUser(User updateUser) {
+        this.updateUser = updateUser;
     }
 
     /**
