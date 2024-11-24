@@ -1,0 +1,122 @@
+[
+    {
+        "fullName": "John Doe",
+        "username": "john_doe",
+        "email": "johndoe@example.com",
+        "password": "password123"
+    },
+    {
+        "fullName": "Jane Smith",
+        "username": "jane_smith",
+        "email": "janesmith@example.com",
+        "password": "securepass"
+    },
+    {
+        "fullName": "Michael Johnson",
+        "username": "mike_j",
+        "email": "michaelj@example.com",
+        "password": "mike1234"
+    },
+    {
+        "fullName": "Emily Davis",
+        "username": "emilyd",
+        "email": "emilyd@example.com",
+        "password": "emily456"
+    },
+    {
+        "fullName": "Chris Brown",
+        "username": "chris_b",
+        "email": "chrisbrown@example.com",
+        "password": "chris789"
+    },
+    {
+        "fullName": "Sarah Wilson",
+        "username": "sarahw",
+        "email": "sarahw@example.com",
+        "password": "sarahpass"
+    },
+    {
+        "fullName": "David Moore",
+        "username": "david_m",
+        "email": "davidmoore@example.com",
+        "password": "david987"
+    },
+    {
+        "fullName": "Jessica Taylor",
+        "username": "jessicat",
+        "email": "jessicat@example.com",
+        "password": "jessicat123"
+    },
+    {
+        "fullName": "Daniel Anderson",
+        "username": "dan_and",
+        "email": "danielanderson@example.com",
+        "password": "danpassword"
+    },
+    {
+        "fullName": "Laura Martinez",
+        "username": "lauram",
+        "email": "lauram@example.com",
+        "password": "laura2021"
+    },
+    {
+        "fullName": "James Lee",
+        "username": "jamesl",
+        "email": "jameslee@example.com",
+        "password": "jameslee789"
+    },
+    {
+        "fullName": "Sophia Thomas",
+        "username": "sophiat",
+        "email": "sophiathomas@example.com",
+        "password": "sophia456"
+    },
+    {
+        "fullName": "Oliver Jackson",
+        "username": "oliverj",
+        "email": "oliverjackson@example.com",
+        "password": "oliverpass"
+    },
+    {
+        "fullName": "Ava White",
+        "username": "ava_w",
+        "email": "avawhite@example.com",
+        "password": "avapass123"
+    },
+    {
+        "fullName": "Ethan Harris",
+        "username": "ethanh",
+        "email": "ethanharris@example.com",
+        "password": "ethanh123"
+    },
+    {
+        "fullName": "Mia Martin",
+        "username": "miam",
+        "email": "miamartin@example.com",
+        "password": "miamartin2022"
+    },
+    {
+        "fullName": "Alexander Walker",
+        "username": "alex_w",
+        "email": "alexwalker@example.com",
+        "password": "alex1234"
+    },
+    {
+        "fullName": "Isabella Young",
+        "username": "isabellay",
+        "email": "isabellayoung@example.com",
+        "password": "isabella2023"
+    },
+    {
+        "fullName": "William Hall",
+        "username": "williamh",
+        "email": "williamhall@example.com",
+        "password": "willpass"
+    },
+    {
+        "fullName": "Emma Allen",
+        "username": "emma_a",
+        "email": "emmaallen@example.com",
+        "password": "emmaal2020"
+    }
+]

@@ -12,22 +12,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import entities.User;
+import persistence.MongoDatabaseAccess;
 
 /**
  *
  * @author blandonm
  */
 public class LoginServlet extends HttpServlet {
-    
-    private User loginUser;
-
-    public User getLoginUser() {
-        return loginUser;
-    }
-
-    public void setLoginUser(User loginUser) {
-        this.loginUser = loginUser;
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -56,12 +47,26 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        MongoDatabaseAccess mongoDatabaseAccess = new MongoDatabaseAccess();
+        
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/update_user.jsp");
-        dispatcher.forward(request, response);
+        Boolean usernameExists = mongoDatabaseAccess.ValidateUsernameExists(username);
+        Boolean passwordIsCorrect = usernameExists == true ? mongoDatabaseAccess.ValidatePasswordIsCorrect(username, password) : false;
         
+        if(usernameExists && passwordIsCorrect){
+            User loginUser = mongoDatabaseAccess.getDatabaseUser(username);
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/update_user.jsp");
+            request.setAttribute("username", username);
+            dispatcher.forward(request, response);
+        }
+        else{
+            request.setAttribute("errorMessage", "Invalid username or password.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     /**

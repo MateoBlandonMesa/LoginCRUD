@@ -4,6 +4,8 @@
  */
 package entities;
 
+import org.bson.Document;
+
 /**
  *
  * @author blandonm
@@ -17,6 +19,24 @@ public class User {
     private String email;
     
     private String password;
+
+    public User() {
+        this.fullName = null;
+        this.username = null;
+        this.email = null;
+        this.password = null;
+    }
+
+    public User(String fullName, String username, String email, String password) {
+        this.fullName = fullName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+    
+    
+    
+    
 
     /**
      * Get the value of password
@@ -92,5 +112,36 @@ public class User {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-
+    
+    public static User fromDocumentToUser(Document doc){
+        try{
+            User user = new User(
+                    doc.getString("fullName"), 
+                    doc.getString("username"), 
+                    doc.getString("email"), 
+                    doc.getString("password"));
+                
+        return user;
+        }
+        catch (Exception ex){
+            System.out.println("Error converting Documento to User: " + ex);
+            return null;
+        }
+    }
+    
+    public Document toDocument() {
+        try{
+            Document doc = new Document("fullName", this.fullName)
+                .append("username", this.username)
+                .append("email", this.email)
+                .append("password", this.password);
+            
+                
+        return doc;
+        }
+        catch (Exception ex){
+            System.out.println("Error converting User to Document: " + ex);
+            return null;
+        }
+    }
 }

@@ -1,0 +1,8 @@
+Cluster
+Username: mateoblandon
+Password: mongodb123
+
+Copy the connection string, then open MongoDB Compass
+Use this connection string in your application
+mongodb+srv://mateoblandon:<db_password>@cluster0.el3zz.mongodb.net/
+mongodb+srv://mateoblandon:mongodb123@cluster0.el3zz.mongodb.net/
