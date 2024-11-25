@@ -24,7 +24,7 @@
                 <% } %>
 
 
-                <form id="registerForm" action="../RegisterServlet" method="POST">
+                <form id="registerForm" action="/LoginCrud/RegisterServlet" method="POST">
 
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name</label>
