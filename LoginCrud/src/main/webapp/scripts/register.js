@@ -12,15 +12,11 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
 
     // Validate that password and confirm password match
     if (password !== confirmPassword) {
+        //prompt("Hola pruebas");
+        //debugger;
         alert("Passwords do not match. Please try again.");
         return;
     }
 
-    // Simulate successful registration (Replace with actual API call)
-    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-    successModal.show();
-
-    document.getElementById("redirectButton").addEventListener("click", function () {
-        window.location.href = "../index.jsp"; // Redirect to the login page
-    });
+    document.getElementById("registerForm").submit();
 });

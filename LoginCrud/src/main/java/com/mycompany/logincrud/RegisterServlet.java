@@ -11,6 +11,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import entities.User;
+import jakarta.servlet.RequestDispatcher;
+import persistence.MongoDatabaseAccess;
 
 /**
  *
@@ -18,41 +20,6 @@ import entities.User;
  */
 public class RegisterServlet extends HttpServlet {
     
-    private User registerUser;
-
-    public User getRegisterUser() {
-        return registerUser;
-    }
-
-    public void setRegisterUser(User registerUser) {
-        this.registerUser = registerUser;
-    }
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RegisterServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RegisterServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -66,7 +33,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
     }
 
     /**
@@ -80,7 +47,30 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        MongoDatabaseAccess mongoDatabaseAccess = new MongoDatabaseAccess();
+        
+        String fullName = request.getParameter("fullName").trim();
+        String username = request.getParameter("username").trim();
+        String email = request.getParameter("email").trim();
+        String password = request.getParameter("password").trim();
+        
+        Boolean usernameExists = mongoDatabaseAccess.ValidateUsernameExists(username);
+        
+        if(!usernameExists){
+            User registerUser = new User(fullName, username, email, password);
+            mongoDatabaseAccess.addUser(registerUser);
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            request.setAttribute("successCreateMessage", "User created");
+            request.setAttribute("errorUpdateMessage", null);
+            dispatcher.forward(request, response);
+        }
+        else{
+            request.setAttribute("errorCreateMessage", "Could not create user. username already exists");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/register.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     /**

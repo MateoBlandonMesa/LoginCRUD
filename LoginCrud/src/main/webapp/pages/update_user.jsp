@@ -59,6 +59,6 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./scripts/update_user.js"></script>
+    <script src="./scripts/update_user.js?v=<%= System.currentTimeMillis() %>"></script>
 </body>
 </html>

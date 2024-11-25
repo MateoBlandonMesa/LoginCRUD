@@ -12,7 +12,19 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h2 class="text-center mb-4">Register</h2>
-                <form id="registerForm" action="RegisterServlet" method="POST">
+
+                <!-- Mostrar mensaje de error si existe -->
+            <% 
+            String errorCreateMessage = (String) request.getAttribute("errorCreateMessage");
+            if (errorCreateMessage != null) { 
+        %>
+            <div class="alert alert-danger text-center" role="alert">
+                <%= errorCreateMessage %>
+            </div>
+        <% } %>
+
+
+                <form id="registerForm" action="../RegisterServlet" method="POST">
                     <!-- Full Name -->
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name</label>
@@ -59,11 +71,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Link to external JavaScript -->
-    <script src="../scripts/register.js"></script>
+    <script src="../scripts/register.js?v=<%= System.currentTimeMillis() %>"></script>
 </body>
 </html>
