@@ -63,6 +63,7 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("username", loginUser.getUsername());
             request.setAttribute("email", loginUser.getEmail());
             request.setAttribute("password", loginUser.getPassword());
+             request.setAttribute("successMessage", "Login success");
             request.setAttribute("errorMessage", null);
             dispatcher.forward(request, response);
         }

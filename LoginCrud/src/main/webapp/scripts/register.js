@@ -12,8 +12,7 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
 
     // Validate that password and confirm password match
     if (password !== confirmPassword) {
-        //prompt("Hola pruebas");
-        //debugger;
+
         alert("Passwords do not match. Please try again.");
         return;
     }

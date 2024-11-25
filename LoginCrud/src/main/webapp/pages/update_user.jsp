@@ -12,7 +12,7 @@
         <div class="card p-4 shadow" style="width: 28rem;">
             <h2 class="text-center mb-4">Update User</h2>
             
-            <!-- Mostrar mensaje de error si existe -->
+           
             <% 
                 String errorMessage = (String) request.getAttribute("errorMessage");
                 if (errorMessage != null) { 
@@ -22,7 +22,7 @@
                 </div>
             <% } %>
             
-            <!-- Obtener los atributos del usuario -->
+            
             <% 
                 String fullName = (String) request.getAttribute("fullName");
                 String username = (String) request.getAttribute("username");

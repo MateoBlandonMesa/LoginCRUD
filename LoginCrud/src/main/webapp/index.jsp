@@ -11,7 +11,7 @@
     <div class="container d-flex align-items-center justify-content-center vh-100">
         <div class="card p-4 shadow" style="width: 22rem;">
             <h2 class="text-center mb-4">Login</h2>
-            <!-- Mensaje de error -->
+
             <% 
                 String errorMessage = (String) request.getAttribute("errorMessage");
                 if (errorMessage != null) { 
@@ -40,7 +40,5 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Link to external JavaScript -->
-    <!--<script src="scripts/login.js?v=<%= System.currentTimeMillis() %>"></script>-->
 </body>
 </html>
