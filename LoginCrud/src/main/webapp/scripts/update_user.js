@@ -17,24 +17,26 @@ document.getElementById("updateForm").addEventListener("submit", function (event
     }
 
     // Simulate successful submission (Replace with actual API call)
-    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-    successModal.show();
+    //const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    //successModal.show();
+//
+    //document.getElementById("redirectButton").addEventListener("click", function () {
+    //    window.location.href = "./index.jsp"; // Redirect to the login page
+    //});
 
-    document.getElementById("redirectButton").addEventListener("click", function () {
-        window.location.href = "./index.jsp"; // Redirect to the login page
-    });
+    document.getElementById("updateForm").submit();
 });
 
 // Simulating previous user data (Replace with real backend data)
-const previousData = {
-    fullName: "John Doe",
-    username: "johndoe123",
-    email: "johndoe@example.com",
-    password: "123456"
-};
-
-// Populate form fields with previous user data
-document.getElementById("fullName").value = previousData.fullName;
-document.getElementById("username").value = previousData.username;
-document.getElementById("email").value = previousData.email;
-document.getElementById("password").value = previousData.password;
+//onst previousData = {
+//   fullName: "John Doe",
+//   username: "johndoe123",
+//   email: "johndoe@example.com",
+//   password: "123456"
+//;
+//
+/// Populate form fields with previous user data
+//ocument.getElementById("fullName").value = previousData.fullName;
+//ocument.getElementById("username").value = previousData.username;
+//ocument.getElementById("email").value = previousData.email;
+//ocument.getElementById("password").value = previousData.password;

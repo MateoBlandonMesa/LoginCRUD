@@ -59,7 +59,11 @@ public class LoginServlet extends HttpServlet {
             User loginUser = mongoDatabaseAccess.getDatabaseUser(username);
             
             RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/update_user.jsp");
-            request.setAttribute("username", username);
+            request.setAttribute("fullName", loginUser.getFullName());
+            request.setAttribute("username", loginUser.getUsername());
+            request.setAttribute("email", loginUser.getEmail());
+            request.setAttribute("password", loginUser.getPassword());
+            request.setAttribute("errorMessage", null);
             dispatcher.forward(request, response);
         }
         else{
